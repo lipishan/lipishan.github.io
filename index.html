@@ -5,94 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lipisha Chaudhary</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      overflow-x: hidden;
-      color: white;
+      background-color: #fdfcf7;
+      color: #222;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 10px 40px;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      pointer-events: none;
-      z-index: -1;
+      z-index: 1000;
     }
 
-    .stars {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -2;
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2b6cb0;
+      font-weight: 500;
     }
 
-    .stars::before, .stars::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background: transparent;
-      box-shadow:
-        1000px 500px white,
-        1500px 1200px white,
-        300px 800px white,
-        1700px 400px white,
-        900px 200px white,
-        400px 1600px white,
-        1800px 700px white,
-        1300px 900px white;
-      animation: starMove 100s linear infinite;
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
     }
 
-    .stars::after {
-      transform: scale(1.5);
-      opacity: 0.5;
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    @keyframes starMove {
-      from { transform: translateY(0); }
-      to { transform: translateY(-1000px); }
+    .hero-text {
+      max-width: 600px;
     }
 
-    header {
-      text-align: center;
-      padding: 100px 20px 40px;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(6px);
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-    }
-
-    p.subtitle {
-      font-size: 1.2em;
-      color: #a0aabf;
+    .hero-text p {
+      font-size: 1.1em;
+      color: #555;
     }
 
     .section {
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 1000px;
+      margin: 60px auto;
       padding: 0 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 12px;
+    }
+
+    .section h2 {
+      color: #2b6cb0;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2b6cb0;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     a {
-      color: #66ccff;
+      color: #2b6cb0;
       text-decoration: none;
     }
 
@@ -102,46 +141,129 @@
 
     footer {
       text-align: center;
-      margin: 60px 0 20px;
+      padding: 40px 0 20px;
       font-size: 0.9em;
-      color: #777;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#interests">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <header>
-    <h1>Lipisha Chaudhary</h1>
-    <p class="subtitle">PhD Student</p>
-    <p class="subtitle">University at Buffalo, SUNY</p>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a>
+  <header class="hero" id="about">
+    <img src="assets/potrait.jpg" alt="Lipisha Chaudhary">
+    <div class="hero-text">
+      <h1>Lipisha Chaudhary</h1>
+      <p>PhD Candidate, Computer Science · University at Buffalo, SUNY</p>
+      <p>I work on multimodal learning and fine-grained motion understanding, with an emphasis on sign language translation and 3D visual-linguistic modeling for human-centered AI systems.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </div>
     </div>
   </header>
 
-  <section class="section">
-    <h2>About</h2>
-    <p>I’m a 4th year PhD student at University at Buffalo, SUNY. My research focuses on Interactive Motion Understanding, Multi-modal modeling, and Sign Language Understanding; building models that bridge visual-linguistic expressions and enable more human-centered AI.</p>
-  </section>
-
-  <section class="section">
+  <section class="section" id="interests">
     <h2>Research Interests</h2>
     <ul>
       <li>Interpretive and expressive human motion understanding</li>
-      <li>Sign language translation and production</li>
-      <li>Multimodal representation learning</li>
+      <li>Sign language understanding, translation, and production</li>
+      <li>Multimodal representation learning for visual-language models</li>
+      <li>3D mesh recovery and motion tokenization</li>
     </ul>
   </section>
 
-  <section class="section">
+  <section class="section" id="projects">
+    <h2>Projects & Publications</h2>
+    <div class="card-grid">
+      <div class="card" onclick="showModal('abstract1')">
+        <h3>Cross-Attention for Sign Analysis</h3>
+        <p>ICPR 2024</p>
+      </div>
+      <div class="card" onclick="showModal('abstract2')">
+        <h3>SignAvatar: 3D Sign Generation</h3>
+        <p>IEEE FG 2024</p>
+      </div>
+      <div class="card" onclick="showModal('abstract3')">
+        <h3>SignNet II – Two-Way SLT</h3>
+        <p>IEEE TPAMI 2022</p>
+      </div>
+    </div>
+
+    <div id="abstract1" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('abstract1')">&times;</span>
+        <h3>Cross-Attention Based Influence Model</h3>
+        <p>We propose a model that jointly attends to manual and nonmanual markers in sign language, enhancing interpretability and translation quality by learning their mutual influence over temporal context.</p>
+      </div>
+    </div>
+
+    <div id="abstract2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('abstract2')">&times;</span>
+        <h3>SignAvatar</h3>
+        <p>This work reconstructs 3D avatar motion from sign language sequences using SMPL-X. It bridges avatar animation and sign expression through linguistically aware mesh recovery.</p>
+      </div>
+    </div>
+
+    <div id="abstract3" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('abstract3')">&times;</span>
+        <h3>SignNet II</h3>
+        <p>SignNet II presents a bidirectional sign-to-text and text-to-sign transformer model trained on real-world sign data with aligned translations, setting a new benchmark in SLT performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Industry Experience</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Dolby Labs (PhD Research Intern)</h3>
+        <p>Summer 2024 – Built an audio description pipeline using video LLMs and RAG; proposed new evaluation metric.</p>
+      </div>
+      <div class="card">
+        <h3>Amazon Alexa AI (Applied Scientist Intern)</h3>
+        <p>Summer 2023 – Developed error-correction system for accented speech with Alpaca-LoRA.</p>
+      </div>
+      <div class="card">
+        <h3>Amazon Alexa AI (Applied Scientist Intern)</h3>
+        <p>Summer 2022 – Designed adversarial training architecture for robust wake word detection.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="recognition">
+    <h2>Awards & Talks</h2>
+    <ul>
+      <li>Invited Talk: <em>“Visual Linguistics in 3D Motion”</em>, ASL Tech Summit 2024</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
     <h2>Contact</h2>
-    <p>You can reach me through my <a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a> or check out my latest work on <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a>.</p>
+    <p><strong>Email:</strong> lipishan@buffalo.edu</p>
+    <p><a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Lipisha Chaudhary. All rights reserved.</p>
+    <p>&copy; 2025 Lipisha Chaudhary · Inspired by Owlstown</p>
   </footer>
+
+  <script>
+    function showModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
 </body>
 </html>
