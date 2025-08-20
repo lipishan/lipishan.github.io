@@ -10,39 +10,60 @@
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: black;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       overflow-x: hidden;
       color: white;
     }
 
-    .stars, .twinkling {
+    body::before {
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      display: block;
-      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
+      z-index: -1;
     }
 
     .stars {
-      background: black url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/stars.png') repeat;
-      animation: moveStars 200s linear infinite;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
     }
 
-    .twinkling {
-      background: transparent url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/twinkling.png') repeat;
-      animation: moveTwinkling 300s linear infinite;
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: transparent;
+      box-shadow:
+        1000px 500px white,
+        1500px 1200px white,
+        300px 800px white,
+        1700px 400px white,
+        900px 200px white,
+        400px 1600px white,
+        1800px 700px white,
+        1300px 900px white;
+      animation: starMove 100s linear infinite;
     }
 
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
+    .stars::after {
+      transform: scale(1.5);
+      opacity: 0.5;
     }
 
-    @keyframes moveTwinkling {
-      from { background-position: 0 0; }
-      to { background-position: 10000px -5000px; }
+    @keyframes starMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(-1000px); }
     }
 
     header {
@@ -89,7 +110,6 @@
 </head>
 <body>
   <div class="stars"></div>
-  <div class="twinkling"></div>
 
   <header>
     <h1>Lipisha Chaudhary</h1>
