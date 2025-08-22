@@ -161,14 +161,11 @@
     <img src="assets/potrait.jpg" alt="Lipisha Chaudhary" style="border-radius: 0; width: 300px; height: auto;">
     <div class="hero-text">
       <h1>Lipisha Chaudhary</h1>
-      <p>PhD Candidate, Computer Science · University at Buffalo, SUNY</p>
-      <p>I’m a fourth-year PhD student in Computer Science and Engineering at the University at Buffalo (SUNY), advised by Dr. Ifeoma Nwogu. I work as a Research Assistant in the Human Behavior Modeling Lab, where our research explores 3D human behavior modeling, pose estimation, facial anonymization, and AI for social good — with my focus centered around inclusive, multimodal learning for sign language understanding.
-
-        I earned my Master’s in Computer Science from Rochester Institute of Technology (RIT), where I also worked as a Research Assistant. I was a PhD Research Intern at Dolby Labs, working on audio-visual understanding. I’ve also interned at Amazon Alexa AI for two summers as an Applied Scientist Intern, contributing to teams working on speaker understanding and ASR error detection and refinement.
-
-        My research is focused on understanding how people express themselves through movement whether it’s in sign language, gestures, or other forms of nonverbal communication. I work with 3D motion data to capture the subtle, meaningful variations in hand, body, and facial movements that are often overlooked. Much of my work supports sign language understanding and generation, but I’m equally interested in applying these concepts to any context where communication goes beyond words. I believe in building systems that understand the complexity of human expression and help make technology more inclusive and responsive to everyone.
-
-        I love the energy that comes from working in teams where ideas flow and people support each other. When I’m not debugging something, I’m likely in the kitchen baking, lying around doing nothing productive, and loving every minute of it.</p>
+        <p>PhD Candidate, Computer Science · University at Buffalo, SUNY</p>
+        <p>I’m a fourth-year PhD student in Computer Science and Engineering at the University at Buffalo (SUNY), advised by Dr. Ifeoma Nwogu. I work as a Research Assistant in the Human Behavior Modeling Lab, where our research explores 3D human behavior modeling, pose estimation, facial anonymization, and AI for social good — with my focus centered around inclusive, multimodal learning for sign language understanding.</p>
+        <p>I earned my Master’s in Computer Science from Rochester Institute of Technology (RIT), where I also worked as a Research Assistant. I was a PhD Research Intern at Dolby Labs, working on audio-visual understanding. I’ve also interned at Amazon Alexa AI for two summers as an Applied Scientist Intern, contributing to teams working on speaker understanding and ASR error detection and refinement.</p>
+        <p>My research is focused on understanding how people express themselves through movement whether it’s in sign language, gestures, or other forms of nonverbal communication. I work with 3D motion data to capture the subtle, meaningful variations in hand, body, and facial movements that are often overlooked. Much of my work supports sign language understanding and generation, but I’m equally interested in applying these concepts to any context where communication goes beyond words. I believe in building systems that understand the complexity of human expression and help make technology more inclusive and responsive to everyone.</p>
+        <p>I love the energy that comes from working in teams where ideas flow and people support each other. When I’m not debugging something, I’m likely in the kitchen baking, lying around doing nothing productive, and loving every minute of it.</p>
       <div class="links">
         <a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -193,9 +190,20 @@
         <h3>Large-Scale 3D Representations for ASL</h3>
         <p>NeurIPS Datasets & Benchmarks Track 2025 – Under Review</p>
       </div>
-      <div class="card" onclick="showModal('abstract5')">
+      <div class="card" onclick="showModal('abstract6')">
+        <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="f2f-slide" src="publications/f2f/main.png" style="display: block;" alt="F2F Image 1">
+          <img class="f2f-slide" src="publications/f2f/F2F-3D.png" style="display: none;" alt="F2F Image 2">
+          <img class="f2f-slide" src="publications/f2f/five_dancer.png" style="display: none;" alt="F2F Image 2">
+          <img class="f2f-slide" src="publications/f2f/Comparison.png" style="display: none;" alt="F2F Image 2">
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'f2f-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'f2f-slide')"></span>
+          </div>
+        </div>
         <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
-        <p>NeurIPS Crwative AI Track 2025 – Under Review</p>
+        <p>NeurIPS Creative AI Track 2025 – Under Review</p>
       </div>
       <div class="card" onclick="showModal('abstract1')">
         <h3>Cross-Attention for Sign Analysis</h3>
@@ -217,7 +225,6 @@
         <p>IEEE FG 2024</p>
         <p><a href="https://www.isca-archive.org/interspeech_2021/ananthanarayana21_interspeech.pdf" target="_blank">Paper Link</a></p>
       </div>
-      
     </div>
 
     <div id="abstract1" class="modal">
@@ -252,6 +259,12 @@
         <span class="close" onclick="closeModal('abstract5')">&times;</span>
         <h3>Large-Scale 3D Representations for Continuous ASL Understanding</h3>
         <p>American Sign Language (ASL) is the primary language of Deaf and Hard-of-Hearing (D/HH) communities in the United States, Canada, parts of West Africa, and other regions worldwide (e.g., Bolivia, Jamaica, and the Philippines). Yet ASL users continue to face barriers in domains such as education, healthcare, and digital media. As a visually rich, 3D language, ASL presents challenges for computational models that rely on 2D inputs or limited 3D pose representations. To address this, we use state-of-the-art 3D pose and mesh estimation models to release large-scale, structured sign representations—including skeleton joints, SMPL-X meshes, and 3D convolutional features—extracted from over 250 hours (nearly 100,000 clips) of signing videos across two ASL datasets: OpenASL and ASLing. We also introduce OpenASL-35k, a curated 35,000-sample benchmark for ASL-to-English translation and sign production, achieving a BLEU4 score of 9.88 for ASL translation without pretraining and similarly demonstrating strong results in production. Finally, we release the complete processing pipeline—including data loaders, model checkpoints, and evaluation tools—to support reproducibility and enable further research in ASL modeling.</p>
+      </div>
+    <div id="abstract6" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('abstract6')">&times;</span>
+        <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
+        <p>Traditional South Asian dance forms encode complex, intricate motions, rhythms, and expressions through coordinated movements of the body and hands. Yet, they remain largely absent from computational archives, limited by scarce motion capture data and the difficulty of capturing fine-grained, synchronized motion at scale. We introduce Footwork2Framework (F2F) - the first large-scale 3D motion dataset for South Asian classical dance, specifically focusing on the Bharatanatyam dance style. It comprises over 47,000 seconds of temporally aligned full-body and detailed hand mesh sequences reconstructed from high-resolution video using state-of-the-art mesh recovery. Surpassing prior resources in scale, anatomical detail, and cultural specificity, F2F not only documents Bharatanatyam at unprecedented granularity but also releases processed 3D features to catalyze research in motion analysis, generation, and cultural preservation. As an initial exploration, we train a simple Variational Autoencoder (VAE)-based transformer, showing that the dataset’s fine-grained 3D features enable models to learn the intricate spatiotemporal structures of this performance tradition. We envision F2F as a foundation for Creative AI systems that can learn from, generate, and help safeguard the embodied knowledge of intangible cultural heritage.</p>
       </div>
     </div>
     
@@ -292,6 +305,53 @@
   <footer>
     <p>&copy; 2025 Lipisha Chaudhary · Inspired by Owlstown</p>
   </footer>
+
+  <!-- JavaScript for All Slideshows -->
+  <script>
+    let slideIndices = {};
+    function showSlide(n, className) {
+    const slides = document.getElementsByClassName(className);
+    if (!slideIndices[className]) slideIndices[className] = 0;
+    for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    slides[n].style.display = "block";
+    slideIndices[className] = n;
+    }
+  </script>
+
+
+  <!-- Shared Slideshow Styles -->
+  <style>
+    .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    }
+    .f2f-slide, .paper1-slide, .paper2-slide, .paper3-slide {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .dot-container {
+    text-align: center;
+    margin-top: 5px;
+    }
+    .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    }
+    .dot:hover {
+    background-color: #717171;
+    }
+  </style>
 
   <script>
     function showModal(id) {
