@@ -213,6 +213,7 @@
             <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'asl3d-slide')"></span>
             <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'asl3d-slide')"></span>
           </div>
+        </div>
         <h3>Large-Scale 3D Representations for ASL</h3>
         <p>NeurIPS Datasets & Benchmarks Track 2025 – Under Review</p>
       </div>
@@ -261,6 +262,7 @@
             <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'sign2-slide')"></span>
             <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'sign2-slide')"></span>
           </div>
+        </div>
         <h3>SignNet II – Two-Way SLT</h3>
         <p>IEEE TPAMI 2022</p>
         <p><a href="https://doi.org/10.1109/TPAMI.2022.3201234" target="_blank">Paper Link</a></p>
@@ -399,6 +401,9 @@
     // Example call for your Footwork2Framework card
     document.addEventListener("DOMContentLoaded", function () {
       setupAutoSlideshow("f2f-slide", 4000, ".dot-container .dot");
+      setupAutoSlideshow("asl3d-slide", 4000, ".asl3d-slide ~ .dot-container .dot");
+      setupAutoSlideshow("cross-slide", 4000, ".cross-slide ~ .dot-container .dot");
+      setupAutoSlideshow("sign2-slide", 4000, ".sign2-slide ~ .dot-container .dot");
     });
     </script>
 
