@@ -187,9 +187,24 @@
     <h2>Projects & Publications</h2>
       <div class="card-grid">
       <div class="card" onclick="showModal('abstract5')">
+        <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="asl3d-slide" src="publications/asl3d/token_freq1-1.png" style="display: block;" alt="F2F Image 1">
+          <img class="asl3d-slide" src="publications/asl3d/translation_overview.png" style="display: none;" alt="F2F Image 2">
+            <!-- Video Slide -->
+          <video class="asl3d-slide" style="display: none;" autoplay muted loop playsinline>
+            <source src="publications/asl3d/1_incam_rerendered.3.cmb.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'asl3d-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'asl3d-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'asl3d-slide')"></span>
+          </div>
         <h3>Large-Scale 3D Representations for ASL</h3>
         <p>NeurIPS Datasets & Benchmarks Track 2025 – Under Review</p>
       </div>
+
       <div class="card" onclick="showModal('abstract6')">
         <!-- Image Slideshow -->
         <div class="slideshow-container">
@@ -200,17 +215,40 @@
           <div class="dot-container">
             <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'f2f-slide')"></span>
             <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'f2f-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'f2f-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(3, 'f2f-slide')"></span>
           </div>
         </div>
         <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
         <p>NeurIPS Creative AI Track 2025 – Under Review</p>
       </div>
       <div class="card" onclick="showModal('abstract1')">
+         <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="cross-slide" src="publications/cross/asling-body-attn-plot.png" style="display: block;" alt="F2F Image 1">
+          <img class="cross-slide" src="publications/cross/asling-face-attn-plot.png" style="display: none;" alt="F2F Image 2">
+          <img class="cross-slide" src="publications/cross/faces.png" style="display: none;" alt="F2F Image 2">
+          <img class="cross-slide" src="publications/cross/Picture6.png" style="display: none;" alt="F2F Image 2">
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(3, 'cross-slide')"></span>
+          </div>
+        </div>
         <h3>Cross-Attention for Sign Analysis</h3>
         <p>ICPR 2024</p>
         <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-78305-0_24" target="_blank">Paper Link</a></p>
       </div>
       <div class="card" onclick="showModal('abstract2')">
+          <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="sign2-slide" src="publications/signnet2/DualLearn.png" style="display: block;" alt="F2F Image 1">
+          <img class="sign2-slide" src="publications/signnet2/transformer.png" style="display: none;" alt="F2F Image 2">
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'sign2-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'sign2-slide')"></span>
+          </div>
         <h3>SignNet II – Two-Way SLT</h3>
         <p>IEEE TPAMI 2022</p>
         <p><a href="https://doi.org/10.1109/TPAMI.2022.3201234" target="_blank">Paper Link</a></p>
@@ -298,27 +336,60 @@
 
   <section class="section" id="contact">
     <h2>Contact</h2>
-    <p><strong>Email:</strong> clipisha124@gmail.com</p>
+    <p><strong>Email:</strong>lipishan@buffalo.edu</p>
     <p><a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Lipisha Chaudhary · Inspired by Owlstown</p>
+    <p>&copy; 2025 Lipisha Chaudhary</p>
   </footer>
 
-  <!-- JavaScript for All Slideshows -->
   <script>
-    let slideIndices = {};
-    function showSlide(n, className) {
-    const slides = document.getElementsByClassName(className);
-    if (!slideIndices[className]) slideIndices[className] = 0;
-    for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    function setupAutoSlideshow(className, interval = 4000, dotSelector = null) {
+      const slides = document.getElementsByClassName(className);
+      const dots = dotSelector ? document.querySelectorAll(dotSelector) : [];
+      let index = 0;
+      let paused = false;
+
+      function showCurrentSlide(i) {
+        for (let j = 0; j < slides.length; j++) slides[j].style.display = "none";
+        slides[i].style.display = "block";
+
+        if (dots.length) {
+          dots.forEach(dot => dot.classList.remove("active-dot"));
+          if (dots[i]) dots[i].classList.add("active-dot");
+        }
+      }
+
+      showCurrentSlide(index);
+
+      // Automatic loop
+      setInterval(() => {
+        if (paused) return;
+        index = (index + 1) % slides.length;
+        showCurrentSlide(index);
+      }, interval);
+
+      // Dot click handling (if applicable)
+      if (dots.length) {
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", function (e) {
+            e.stopPropagation(); // prevents modal from triggering
+            index = i;
+            showCurrentSlide(index);
+            paused = true;
+            setTimeout(() => paused = false, 5000); // pause for 5s
+          });
+        });
+      }
     }
-    slides[n].style.display = "block";
-    slideIndices[className] = n;
-    }
-  </script>
+
+    // Example call for your Footwork2Framework card
+    document.addEventListener("DOMContentLoaded", function () {
+      setupAutoSlideshow("f2f-slide", 4000, ".dot-container .dot");
+    });
+    </script>
+
 
 
   <!-- Shared Slideshow Styles -->
@@ -347,6 +418,9 @@
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+    }
+    .dot.active-dot {
+      background-color: #333;
     }
     .dot:hover {
     background-color: #717171;
