@@ -153,7 +153,7 @@
     <a href="#interests">Research</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#recognition">Recognition</a>
+    <!-- <a href="#recognition">Recognition</a> -->
     <a href="#contact">Contact</a>
   </nav>
 
@@ -162,7 +162,13 @@
     <div class="hero-text">
       <h1>Lipisha Chaudhary</h1>
       <p>PhD Candidate, Computer Science · University at Buffalo, SUNY</p>
-      <p>I work on multimodal learning and fine-grained motion understanding, with an emphasis on sign language translation and 3D visual-linguistic modeling for human-centered AI systems.</p>
+      <p>I’m a fourth-year PhD student in Computer Science and Engineering at the University at Buffalo (SUNY), advised by Dr. Ifeoma Nwogu. I work as a Research Assistant in the Human Behavior Modeling Lab, where our research explores 3D human behavior modeling, pose estimation, facial anonymization, and AI for social good — with my focus centered around inclusive, multimodal learning for sign language understanding.
+
+        I earned my Master’s in Computer Science from Rochester Institute of Technology (RIT), where I also worked as a Research Assistant. I was a PhD Research Intern at Dolby Labs, working on audio-visual understanding. I’ve also interned at Amazon Alexa AI for two summers as an Applied Scientist Intern, contributing to teams working on speaker understanding and ASR error detection and refinement.
+
+        My research is focused on understanding how people express themselves through movement whether it’s in sign language, gestures, or other forms of nonverbal communication. I work with 3D motion data to capture the subtle, meaningful variations in hand, body, and facial movements that are often overlooked. Much of my work supports sign language understanding and generation, but I’m equally interested in applying these concepts to any context where communication goes beyond words. I believe in building systems that understand the complexity of human expression and help make technology more inclusive and responsive to everyone.
+
+        I love the energy that comes from working in teams where ideas flow and people support each other. When I’m not debugging something, I’m likely in the kitchen baking, lying around doing nothing productive, and loving every minute of it.</p>
       <div class="links">
         <a href="https://www.linkedin.com/in/lipisha-chaudhary/" target="_blank">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=-7KK7vUAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -182,7 +188,15 @@
 
   <section class="section" id="projects">
     <h2>Projects & Publications</h2>
-    <div class="card-grid">
+      <div class="card-grid">
+      <div class="card" onclick="showModal('abstract5')">
+        <h3>Large-Scale 3D Representations for ASL</h3>
+        <p>NeurIPS Datasets & Benchmarks Track 2025 – Under Review</p>
+      </div>
+      <div class="card" onclick="showModal('abstract5')">
+        <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
+        <p>NeurIPS Crwative AI Track 2025 – Under Review</p>
+      </div>
       <div class="card" onclick="showModal('abstract1')">
         <h3>Cross-Attention for Sign Analysis</h3>
         <p>ICPR 2024</p>
@@ -233,6 +247,12 @@
         <h3>Effects of Feature Scaling and Fusion on Sign Language Translation</h3>
         <p>Sign language translation without transcription has only recently started to gain attention. In our work, we focus on improving the state-of-the-art translation by introducing a multifeature fusion architecture with enhanced input features. Assign language is challenging to segment, we obtain the input features by extracting overlapping scaled segments across the video and obtaining their 3D CNN representations. We exploit the attention mechanism in the fusion architecture by initially learning dependencies between different frames of the same video and later fusing them to learn the relations between different features from the same video. In addition to 3D CNN features, we also analyze pose-based features.</p>
       </div>
+    <div id="abstract5" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('abstract5')">&times;</span>
+        <h3>Large-Scale 3D Representations for Continuous ASL Understanding</h3>
+        <p>American Sign Language (ASL) is the primary language of Deaf and Hard-of-Hearing (D/HH) communities in the United States, Canada, parts of West Africa, and other regions worldwide (e.g., Bolivia, Jamaica, and the Philippines). Yet ASL users continue to face barriers in domains such as education, healthcare, and digital media. As a visually rich, 3D language, ASL presents challenges for computational models that rely on 2D inputs or limited 3D pose representations. To address this, we use state-of-the-art 3D pose and mesh estimation models to release large-scale, structured sign representations—including skeleton joints, SMPL-X meshes, and 3D convolutional features—extracted from over 250 hours (nearly 100,000 clips) of signing videos across two ASL datasets: OpenASL and ASLing. We also introduce OpenASL-35k, a curated 35,000-sample benchmark for ASL-to-English translation and sign production, achieving a BLEU4 score of 9.88 for ASL translation without pretraining and similarly demonstrating strong results in production. Finally, we release the complete processing pipeline—including data loaders, model checkpoints, and evaluation tools—to support reproducibility and enable further research in ASL modeling.</p>
+      </div>
     </div>
     
     </div>
@@ -256,12 +276,12 @@
     </div>
   </section>
 
-  <section class="section" id="recognition">
+  <!-- <section class="section" id="recognition">
     <h2>Awards & Talks</h2>
     <ul>
       <li>Invited Talk: <em>“Visual Linguistics in 3D Motion”</em>, ASL Tech Summit 2024</li>
     </ul>
-  </section>
+  </section> -->
 
   <section class="section" id="contact">
     <h2>Contact</h2>
