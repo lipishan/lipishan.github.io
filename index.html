@@ -197,7 +197,55 @@
   <section class="section" id="projects">
     <h2>Projects & Publications</h2>
       <div class="card-grid">
-      
+
+      <div class="card" onclick="showModal('abstract1')">
+         <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="cross-slide" src="publications/cross/asling-body-attn-plot.png" style="display: block;" alt="F2F Image 1">
+          <img class="cross-slide" src="publications/cross/asling-face-attn-plot.png" style="display: none;" alt="F2F Image 2">
+          <img class="cross-slide" src="publications/cross/faces.png" style="display: none;" alt="F2F Image 2">
+          <img class="cross-slide" src="publications/cross/Picture6.png" style="display: none;" alt="F2F Image 2">
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'cross-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(3, 'cross-slide')"></span>
+          </div>
+        </div>
+        <h3>Cross-Attention for Sign Analysis</h3>
+        <p>ICPR 2024</p>
+        <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-78305-0_24" target="_blank">Paper Link</a></p>
+      </div>
+
+
+      <div class="card" onclick="showModal('abstract2')">
+          <!-- Image Slideshow -->
+        <div class="slideshow-container">
+          <img class="sign2-slide" src="publications/signnet2/DualLearn.png" style="display: block;" alt="F2F Image 1">
+          <img class="sign2-slide" src="publications/signnet2/transformer.png" style="display: none;" alt="F2F Image 2">
+          <div class="dot-container">
+            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'sign2-slide')"></span>
+            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'sign2-slide')"></span>
+          </div>
+        </div>
+        <h3>SignNet II – Two-Way SLT</h3>
+        <p>IEEE TPAMI 2022</p>
+        <p><a href="https://doi.org/10.1109/TPAMI.2022.3201234" target="_blank">Paper Link</a></p>
+      </div>
+
+
+      <div class="card" onclick="showModal('abstract3')">
+        <h3>Cross-Feature Fusion Sign Language Translation</h3>
+        <p>IEEE FG 2024</p>
+        <p><a href="https://ieeexplore.ieee.org/abstract/document/9667027" target="_blank">Paper Link</a></p>
+      </div>
+
+      <div class="card" onclick="showModal('abstract4')">
+        <h3>Feature Scaling and Fusion on Sign Language Translation</h3>
+        <p>IEEE FG 2024</p>
+        <p><a href="https://www.isca-archive.org/interspeech_2021/ananthanarayana21_interspeech.pdf" target="_blank">Paper Link</a></p>
+      </div>
+
       <div class="card" onclick="showModal('abstract5')">
         <!-- Image Slideshow -->
         <div class="slideshow-container">
@@ -237,48 +285,7 @@
         <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
         <p>NeurIPS Creative AI Track 2025 – Under Review</p>
       </div>
-      <div class="card" onclick="showModal('abstract1')">
-         <!-- Image Slideshow -->
-        <div class="slideshow-container">
-          <img class="cross-slide" src="publications/cross/asling-body-attn-plot.png" style="display: block;" alt="F2F Image 1">
-          <img class="cross-slide" src="publications/cross/asling-face-attn-plot.png" style="display: none;" alt="F2F Image 2">
-          <img class="cross-slide" src="publications/cross/faces.png" style="display: none;" alt="F2F Image 2">
-          <img class="cross-slide" src="publications/cross/Picture6.png" style="display: none;" alt="F2F Image 2">
-          <div class="dot-container">
-            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'cross-slide')"></span>
-            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'cross-slide')"></span>
-            <span class="dot" onclick="event.stopPropagation(); showSlide(2, 'cross-slide')"></span>
-            <span class="dot" onclick="event.stopPropagation(); showSlide(3, 'cross-slide')"></span>
-          </div>
-        </div>
-        <h3>Cross-Attention for Sign Analysis</h3>
-        <p>ICPR 2024</p>
-        <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-78305-0_24" target="_blank">Paper Link</a></p>
-      </div>
-      <div class="card" onclick="showModal('abstract2')">
-          <!-- Image Slideshow -->
-        <div class="slideshow-container">
-          <img class="sign2-slide" src="publications/signnet2/DualLearn.png" style="display: block;" alt="F2F Image 1">
-          <img class="sign2-slide" src="publications/signnet2/transformer.png" style="display: none;" alt="F2F Image 2">
-          <div class="dot-container">
-            <span class="dot" onclick="event.stopPropagation(); showSlide(0, 'sign2-slide')"></span>
-            <span class="dot" onclick="event.stopPropagation(); showSlide(1, 'sign2-slide')"></span>
-          </div>
-        </div>
-        <h3>SignNet II – Two-Way SLT</h3>
-        <p>IEEE TPAMI 2022</p>
-        <p><a href="https://doi.org/10.1109/TPAMI.2022.3201234" target="_blank">Paper Link</a></p>
-      </div>
-      <div class="card" onclick="showModal('abstract3')">
-        <h3>Cross-Feature Fusion Sign Language Translation</h3>
-        <p>IEEE FG 2024</p>
-        <p><a href="https://ieeexplore.ieee.org/abstract/document/9667027" target="_blank">Paper Link</a></p>
-      </div>
-      <div class="card" onclick="showModal('abstract4')">
-        <h3>Feature Scaling and Fusion on Sign Language Translation</h3>
-        <p>IEEE FG 2024</p>
-        <p><a href="https://www.isca-archive.org/interspeech_2021/ananthanarayana21_interspeech.pdf" target="_blank">Paper Link</a></p>
-      </div>
+
     </div>
 
     <div id="abstract1" class="modal">
@@ -288,12 +295,14 @@
         <p>Both manual (relating to the use of hands) and non-manual markers (NMM), such as facial expressions or mouthing cues, are important for providing the complete meaning of phrases in American Sign Language (ASL). Efforts have been made in advancing sign language to spoken/written language understanding, but most of these have primarily focused on manual features only. In this work, using advanced neural machine translation methods, we examine and report on the extent to which facial expressions contribute to understanding sign language phrases. We present a sign language translation architecture consisting of two-stream encoders, with one encoder handling the face and the other handling the upper body (with hands). We propose a new parallel cross-attention decoding mechanism that is useful for quantifying the influence of each input modality on the output. The two streams from the encoder are directed simultaneously to different attention stacks in the decoder. Examining the properties of the parallel cross-attention weights allows us to analyze the importance of facial markers compared to body and hand features during a translating task.</p>
       </div>
     </div>
+
     <div id="abstract2" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('abstract2')">&times;</span>
         <h3>SignNet II: A Transformer-Based Two-Way Sign Language Translation Model</h3>
         <p>SignNet II presents a bidirectional sign-to-text and text-to-sign transformer model trained on real-world sign data with aligned translations, setting a new benchmark in SLT performance.</p>
       </div>
+    </div>
 
     <div id="abstract3" class="modal">
       <div class="modal-content">
@@ -302,26 +311,29 @@
         <p>While a significant amount of work has been done on the commonly used, tightly -constrained weather-based, German sign language (GSL) dataset, little has been done for continuous sign language translation (SLT) in more realistic settings, including American sign language (ASL) translation. Also, while CNN - based features have been consistently shown to work well on the GSL dataset, it is not clear whether such features will work as well in more realistic settings when there are more heterogeneous signers in non-uniform backgrounds. To this end, in this work, we introduce a new, realistic phrase-level ASL dataset (ASLing), and explore the role of different types of visual features (CNN embeddings, human body keypoints, and optical flow vectors) in translating it to spoken American English. We propose a novel Transformer-based, visual feature learning method for ASL translation. We demonstrate the explainability efficacy of our proposed learning methods by visualizing activation weights under various input conditions and discover that the body keypoints are consistently the most reliable set of input features. Using our model, we successfully transfer-learn from the larger GSL dataset to ASLing, resulting in significant BLEU score improvements. In summary, this work goes a long way in bringing together the AI resources required for automated ASL translation in unconstrained environments.</p>
       </div>
     </div>
+
     <div id="abstract4" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('abstract4')">&times;</span>
         <h3>Effects of Feature Scaling and Fusion on Sign Language Translation</h3>
         <p>Sign language translation without transcription has only recently started to gain attention. In our work, we focus on improving the state-of-the-art translation by introducing a multifeature fusion architecture with enhanced input features. Assign language is challenging to segment, we obtain the input features by extracting overlapping scaled segments across the video and obtaining their 3D CNN representations. We exploit the attention mechanism in the fusion architecture by initially learning dependencies between different frames of the same video and later fusing them to learn the relations between different features from the same video. In addition to 3D CNN features, we also analyze pose-based features.</p>
       </div>
+    </div>
+
     <div id="abstract5" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('abstract5')">&times;</span>
         <h3>Large-Scale 3D Representations for Continuous ASL Understanding</h3>
         <p>American Sign Language (ASL) is the primary language of Deaf and Hard-of-Hearing (D/HH) communities in the United States, Canada, parts of West Africa, and other regions worldwide (e.g., Bolivia, Jamaica, and the Philippines). Yet ASL users continue to face barriers in domains such as education, healthcare, and digital media. As a visually rich, 3D language, ASL presents challenges for computational models that rely on 2D inputs or limited 3D pose representations. To address this, we use state-of-the-art 3D pose and mesh estimation models to release large-scale, structured sign representations—including skeleton joints, SMPL-X meshes, and 3D convolutional features—extracted from over 250 hours (nearly 100,000 clips) of signing videos across two ASL datasets: OpenASL and ASLing. We also introduce OpenASL-35k, a curated 35,000-sample benchmark for ASL-to-English translation and sign production, achieving a BLEU4 score of 9.88 for ASL translation without pretraining and similarly demonstrating strong results in production. Finally, we release the complete processing pipeline—including data loaders, model checkpoints, and evaluation tools—to support reproducibility and enable further research in ASL modeling.</p>
       </div>
+    </div>
+
     <div id="abstract6" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('abstract6')">&times;</span>
         <h3>Footwork2Framework: Capturing Fine-Grained 3D Motion Representations in Expressive Dance</h3>
         <p>Traditional South Asian dance forms encode complex, intricate motions, rhythms, and expressions through coordinated movements of the body and hands. Yet, they remain largely absent from computational archives, limited by scarce motion capture data and the difficulty of capturing fine-grained, synchronized motion at scale. We introduce Footwork2Framework (F2F) - the first large-scale 3D motion dataset for South Asian classical dance, specifically focusing on the Bharatanatyam dance style. It comprises over 47,000 seconds of temporally aligned full-body and detailed hand mesh sequences reconstructed from high-resolution video using state-of-the-art mesh recovery. Surpassing prior resources in scale, anatomical detail, and cultural specificity, F2F not only documents Bharatanatyam at unprecedented granularity but also releases processed 3D features to catalyze research in motion analysis, generation, and cultural preservation. As an initial exploration, we train a simple Variational Autoencoder (VAE)-based transformer, showing that the dataset’s fine-grained 3D features enable models to learn the intricate spatiotemporal structures of this performance tradition. We envision F2F as a foundation for Creative AI systems that can learn from, generate, and help safeguard the embodied knowledge of intangible cultural heritage.</p>
       </div>
-    </div>
-    
     </div>
   </section>
 
@@ -417,26 +429,23 @@
     /* max-width: 100%;
     position: relative;
     margin-bottom: 10px; */
-    /* width: 100%; */
-    max-width: 1000px;
-    height: auto;
+    width: 100%;
+    /* height: auto; */
     aspect-ratio: 4 / 3; /* keeps size consistent */
     position: relative;
     overflow: hidden;
     border-radius: 6px;
     margin-bottom: 10px;
+    background-color: #f4f4f4; /* fallback background */
     }
-    .slideshow-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-    }
+    .slideshow-container img,
     .slideshow-container video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: none;
+      object-fit: contain; /* or 'cover' if you want to fill the area */
+      /* display: none; */
+      display: block;
+      margin: 0 auto;
     }
     .asl3d-slide, .f2f-slide, .cross-slide, .sign2-slide {
     width: 100%;
